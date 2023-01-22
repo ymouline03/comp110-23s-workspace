@@ -1,32 +1,38 @@
-#Wordle kind of
-__author__ = "730611189"
+"""ex01 = Chardle - A cute step towards wordle."""
 
-print('Welcome to chardle. Player one will enter a 5 letter word and player 2 will try to guess the word letter by letter in 6 turns')
+__author__ = '730611189'
 
-while True:
-  word = input('Player 1, enter a word for player 2 to guess')
-  if len(word) != 5: print('word must be 5 letters')
-  else: break
+word: str = input('enter a five letter word')
+if len(word) != 5: 
+  print('Word must be 5 letters long')
+  exit()
 
-bank = []
-wordrev = '_____'
+guess: str = input('Guess a letter')
+if len(guess) != 1:
+  print('Can only guess one letter')
+  exit()
 
-while True:
-  guess = input('player 2, enter a letter')
-  if guess == '': print('invalid guess') 
-  elif len(guess) > 1: print('you can only guess one letter at a time')
-  elif guess in bank: print('letter already guessed')    
-  elif guess in word:
-    print(guess, 'appears in the secret word', word.count(guess), 'time(s)')
-    bank.append(guess)
-    wordrevlist = list(wordrev)
-    for i in range(0, 5):
-      if word[i] == guess: wordrevlist[i] = guess
-    wordrev = ''.join(wordrevlist)
-    if wordrev == word: 
-      print('You guessed it! The word was', wordrev, '. Thanks for playing.')
-      break
-    else: print('New word: ', wordrev) 
-  else: 
-    print('Letter not in word, try again.')
-    
+count: int = 0
+
+print('Searching for', guess, 'in', word)
+if guess == word[0]:
+  print(guess, 'found at index 0')
+  count += 1
+if guess == word[1]:
+  print(guess, 'found at index 1')
+  count += 1
+if guess == word[2]:
+  print(guess, 'found at index 2')
+  count += 1
+if guess == word[3]:
+  print(guess, 'found at index 3')
+  count += 1
+if guess == word[4]:
+  print(guess, 'found at index 4')
+  count += 1
+
+if count == 0: print('No instances of', guess, 'found in', word)
+if count == 1: print('1 instance of', guess, 'found in', word)
+if count == 2: print('2 instances of', guess, 'found in', word)
+if count == 3: print('3 instances of', guess, 'found in', word)
+if count == 4: print('No instances of', guess, 'found in', word)
