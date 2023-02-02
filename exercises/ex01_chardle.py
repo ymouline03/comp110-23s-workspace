@@ -2,14 +2,14 @@
 
 __author__ = '730611189'
 
-word: str = input('enter a five letter word')
+word: str = input('Enter a 5 character word:')
 if len(word) != 5: 
-  print('Word must be 5 letters long')
+  print('Error: Word must contain 5 characters')
   exit()
 
-guess: str = input('Guess a letter')
+guess: str = input('Enter a single character:')
 if len(guess) != 1:
-  print('Can only guess one letter')
+  print('Error: Character must be a single character.')
   exit()
 
 count: int = 0
@@ -35,4 +35,5 @@ if count == 0: print('No instances of', guess, 'found in', word)
 if count == 1: print('1 instance of', guess, 'found in', word)
 if count == 2: print('2 instances of', guess, 'found in', word)
 if count == 3: print('3 instances of', guess, 'found in', word)
-if count == 4: print('No instances of', guess, 'found in', word)
+if count == 4: print('4 instances of', guess, 'found in', word)
+if count == 5: print('5 instances of', guess, 'found in', word)
