@@ -1,4 +1,5 @@
-'''Utils'''
+'''More Utils'''
+
 __author__ = '730611189'
 
 def only_evens(ints_list: list[int]) -> list[int]:
@@ -11,16 +12,19 @@ def only_evens(ints_list: list[int]) -> list[int]:
 
 def concat(int_list_1: list[int], int_list_2: list[int]) -> list[int]:
   '''combines the numbers in 2 lists'''
+  new_list = int_list_1
   for index in int_list_2:
-    int_list_1.append(index)
-  return int_list_1
+    new_list.append(index)
+  return new_list
 
 def sub(ints_list: list[int], start_idx: int, end_idx: int) -> list[int]:
   '''returns certain numbers in a list'''
+  if start_idx < 0: start_idx = 0
+  if end_idx > len(ints_list): end_idx = len(ints_list)
+  if len(ints_list) == 0: return []
+  if start_idx == len(ints_list): return []
   new_list: list[int] = []
   for index in range(start_idx, end_idx):
     new_list.append(ints_list[index])
   return new_list
 
-
-      
