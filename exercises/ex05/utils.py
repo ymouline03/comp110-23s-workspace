@@ -1,5 +1,4 @@
-'''More Utils'''
-
+'''More Utils.'''
 __author__ = '730611189'
 
 def only_evens(ints_list: list[int]) -> list[int]:
@@ -12,7 +11,9 @@ def only_evens(ints_list: list[int]) -> list[int]:
 
 def concat(int_list_1: list[int], int_list_2: list[int]) -> list[int]:
   '''combines the numbers in 2 lists'''
-  new_list = int_list_1
+  new_list: list[int] = []
+  for index in int_list_1:
+    new_list.append(index)
   for index in int_list_2:
     new_list.append(index)
   return new_list
