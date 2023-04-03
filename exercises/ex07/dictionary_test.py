@@ -16,8 +16,8 @@ def test_invert_2() -> None:
 
 def test_invert_3() -> None:
     '''Testing if invert outputs KeyError'''
-    test_dict: dict[str, str] = {'dog': 'bird', 'cat': 'bird'}
-    assert KeyError
+    test_dict: dict[str, str] = {'dog': 'bird', 'cat': 'fly'}
+    assert invert(test_dict) == {'bird': 'dog', 'fly': 'cat'}
 
 def test_favorite_color_1() -> None:
     '''Testing if favorite_color outputs 'blue' '''
